@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Flip Book 💕</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="envelope-container">
+  <div class="envelope" id="envelope">
+    <img src="https://assets.codepen.io/4927073/Envelope3.png" alt="Envelope">
+  </div>
+  
+  <div class="card" id="card">
+    <!-- COVER -->
+    <div class="cover">
+      <img src="https://assets.codepen.io/4927073/ValCard.png" alt="Valentine Cover">
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="page page1">
+      <div class="page-content page1-content">
+        <div class="centered-text">
+          <p class="page-text">Will you be my<br>valentine habibi? ❤️</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page page2">
+      <div class="page-content page2-content">
+        <p class="page-text long-text">
+Hey 3omri wsh raki cv 💕
+
+Honey today is our first valentine day kifkif. Jms htaflt bih ou ma nst3rfch bih psq 3lh lhob 3omro ma kan fe nhar wahed, lhob tjri fe ga3 liyam fel ups and downs 🤍
+
+So basically uk bli nhbk mchi ghir lyom, nhbk fe jmi3 el ayam, fe jmi3 el aw9at 💖
+
+Anyway this wsh raki tchofi ghir haja sghira men wsh 9ader ndir bah nprovilk hobi. Balak hadi haja ta7t sghira psq ma ranich 9ader nkon m3ak wla n3tik gift psq u deserve the world 🌍✨
+
+U are a girl, a woman that i can give my eyes to bla ma nkhmem. If u want my soul nahi jedha i give it too u idc 🥹 Jss my soul tkon fe aman fe ydik lhnan hadok sghar 🤍
+
+Lili ni nktb fe had msg ou ana im soo happy soo proud 3ndi a cute girl like u sweet girlfriend like u and a wonderful wife like u in the future 💍✨
+
+Lili 3omri i love u bzf nhbk ou klmt nhbk 9lila fik. Kon n3tik my heart thsi be wsh nhs jihtk rah tsbini t9olili hada ga3 🥺❤️
+
+Had lhob kol yom yzid m3a kol dhka mnk m3a kol hadra m3a kol kelma ou m3a kol za3fa nzid nhbk ktr baby Lina 💕
+
+Rana fe 8 month kifkif ou nchlh had el 8 month ywli 8 yrs ou 8 yrs ywlo forever 🤍♾️
+
+Lina nhbk mchi ghir lyom nhbk daymn 🤍 Hada msg sghir brk nchlh yfrhk 🥰
+
+I love u mami 💘
+
+Habibek Mohamed 💌
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let card = document.getElementById("card");
+let envelope = document.getElementById("envelope");
+let state = 0;
+
+// Open envelope on first click
+envelope.addEventListener("click", function(e) {
+  e.stopPropagation();
+  envelope.classList.add("open-envelope");
+  setTimeout(() => {
+    card.classList.add("show-card");
+  }, 300);
+});
+
+// Card flip on click
+card.addEventListener("click", function(e) {
+  e.stopPropagation();
+  state++;
+  
+  if (state === 1) {
+    card.classList.add("open1");
+    card.classList.remove("open2");
+  } 
+  else if (state === 2) {
+    card.classList.add("open2");
+  } 
+  else if (state === 3) {
+    card.classList.remove("open1", "open2");
+    state = 0;
+  }
+});
+
+// Reset everything function (double tap envelope to reset)
+envelope.addEventListener("dblclick", function() {
+  envelope.classList.remove("open-envelope");
+  card.classList.remove("show-card", "open1", "open2");
+  state = 0;
+});
+</script>
+
+</body>
+</html>
